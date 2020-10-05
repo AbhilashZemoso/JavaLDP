@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ZemosoLDP.iml" filepath="$PROJECT_DIR$/.idea/ZemosoLDP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samples/Solving problems/Solving problems.iml" filepath="$PROJECT_DIR$/samples/Solving problems/Solving problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/samples/samples.iml" filepath="$PROJECT_DIR$/samples/samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Solving Problems/week1/week1.iml" filepath="$PROJECT_DIR$/Solving Problems/week1/week1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArraysListDS/week1/week11.iml" filepath="$PROJECT_DIR$/ArraysListDS/week1/week11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Solving Problems/week2/week2.iml" filepath="$PROJECT_DIR$/Solving Problems/week2/week2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArraysListDS/week2/week21.iml" filepath="$PROJECT_DIR$/ArraysListDS/week2/week21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Solving Problems/week3/week3.iml" filepath="$PROJECT_DIR$/Solving Problems/week3/week3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArraysListDS/week3/week31.iml" filepath="$PROJECT_DIR$/ArraysListDS/week3/week31.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArraysListDS/week4/week4.iml" filepath="$PROJECT_DIR$/ArraysListDS/week4/week4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Solving Problems/week4/week41.iml" filepath="$PROJECT_DIR$/Solving Problems/week4/week41.iml" />
     </modules>
   </component>
 </project>
