@@ -4,24 +4,45 @@ import java.util.Scanner;
 Time Complexity     :  O(n)
 Space Complexity    :  O(n)
  */
+class MatchAlphabets {
+    private boolean checkAlphabets[];
+    private String input;
 
-public class Assignment2 {
-    public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
-        String input = sc.next().toLowerCase();
-        boolean checkAlphabets[] = new boolean[26];
+    MatchAlphabets(String input) {
+        checkAlphabets = new boolean[26];
+        this.input = input.toLowerCase();
+    }
+
+    private boolean isAlphabet(char ch) {
+        if (ch >= 'a' && ch <= 'z')
+            return true;
+        return false;
+    }
+
+    public boolean containsAllAlphabets() {
         int count = 0;
-        for(char ch:input.toCharArray()){
-            if(ch>='a' && ch<='z' && !checkAlphabets[ch-'a']){
-                checkAlphabets[ch-'a'] = true;
+        for (char ch : input.toCharArray()) {
+            if (isAlphabet(ch) && !checkAlphabets[ch - 'a']) {
+                checkAlphabets[ch - 'a'] = true;
                 count++;
-                if(count==26)
+                if (count == 26)
                     break;
             }
         }
-        if(count==26)
+        if (count == 26) {
             System.out.println("contains all alphabets");
-        else
-            System.out.println("do not contain all alphabets");
+            return true;
+        }
+        System.out.println("do not contain all alphabets");
+        return false;
+    }
+}
+
+public class Assignment2 {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+        MatchAlphabets match = new MatchAlphabets(input);
+        match.containsAllAlphabets();
     }
 }
