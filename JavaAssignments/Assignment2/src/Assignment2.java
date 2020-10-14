@@ -40,9 +40,14 @@ class MatchAlphabets {
 
 public class Assignment2 {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        String input = sc.next();
-        MatchAlphabets match = new MatchAlphabets(input);
-        match.containsAllAlphabets();
+        boolean takeInput = false;
+        if(takeInput) {
+            Scanner sc = new Scanner(System.in);
+            String input = sc.next();
+            MatchAlphabets match = new MatchAlphabets(input);
+            match.containsAllAlphabets();
+        }
+        else
+            Tester.testAssignment2();
     }
 }
