@@ -1,3 +1,8 @@
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
+
 class AVLTree {
     private class Node {
         private int data;
@@ -97,27 +102,61 @@ class AVLTree {
     }
 
     static void preOrder(Node node) {
+        System.out.println("Preorder traversal : ");
         if (node == null)
             return;
-        System.out.print(node.data + " ");
-        preOrder(node.left);
-        preOrder(node.right);
+        Stack<Node> stack = new Stack<>();
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.push(node);
+                System.out.print(node.data + " ");
+                node = node.left;
+            }
+            node = stack.pop();
+            node = node.right;
+        }
+        System.out.println();
     }
 
     static void inOrder(Node node) {
+        System.out.println("Inorder traversal : ");
         if (node == null)
             return;
-        inOrder(node.left);
-        System.out.print(node.data + " ");
-        inOrder(node.right);
+        Stack<Node> stack = new Stack<>();
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            System.out.print(node.data + " ");
+            node = node.right;
+        }
+        System.out.println();
     }
 
     static void postOrder(Node node) {
+        System.out.println("Postorder traversal : ");
         if (node == null)
             return;
-        postOrder(node.left);
-        postOrder(node.right);
-        System.out.print(node.data + " ");
+        Stack<Node> stack = new Stack<>();
+        stack.push(node);
+        Stack<Node> out = new Stack<>();
+        while (!stack.empty()) {
+            node = stack.pop();
+            out.push(node);
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+        while (!out.empty()) {
+            System.out.print(out.pop().data + " ");
+        }
+        System.out.println();
     }
 }
 
@@ -129,21 +168,19 @@ public class BalancedBSTDemo {
         tree.head = tree.insert(11, tree.head);
         tree.head = tree.insert(9, tree.head);
         tree.head = tree.insert(10, tree.head);
-        tree.head = tree.insert(6, tree.head);
         tree.head = tree.insert(7, tree.head);
+        tree.head = tree.insert(6, tree.head);
         tree.head = tree.insert(3, tree.head);
         tree.head = tree.insert(2, tree.head);
-        tree.inOrder(tree.head);
-        System.out.println();
         tree.preOrder(tree.head);
-        System.out.println();
+        tree.inOrder(tree.head);
         tree.postOrder(tree.head);
         System.out.println();
-        if(tree.search(tree.head,10))
+        if (tree.search(tree.head, 10))
             System.out.println("10 found");
-        if(tree.search(tree.head,3))
+        if (tree.search(tree.head, 3))
             System.out.println("3 found");
-        if(tree.search(tree.head,13))
+        if (tree.search(tree.head, 13))
             System.out.println("13 found");
     }
 }
