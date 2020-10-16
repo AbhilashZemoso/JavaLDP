@@ -1,28 +1,39 @@
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String args[]){
+    private static void manualEntry(){
         SList<Integer> head = new SList<>(0);
         System.out.println(head);
-        SListIterator<Integer> iter = head.iterator();
+        SListIterator<Integer> listIterator = head.iterator();
         //insert data through iterator
-        iter.insert(1);
+        listIterator.insert(1);
         System.out.println(head);
-        iter.next();
-        iter.insert(2);
+        listIterator.next();
+        listIterator.insert(2);
         System.out.println(head);
-        iter = head.iterator();
+        listIterator = head.iterator();
         //remove data through iterator
-        iter.remove();
+        listIterator.remove();
         System.out.println(head);
-        iter.next();
-        iter.remove();
+        listIterator.next();
+        listIterator.remove();
         System.out.println(head);
-        if(iter.hasNext())
-            iter.remove();
-        iter = head.iterator();
-        if(iter.hasNext())
-            iter.remove();
+        if(listIterator.hasNext())
+            listIterator.remove();
+        listIterator = head.iterator();
+        if(listIterator.hasNext())
+            listIterator.remove();
         System.out.println(head);
+    }
+
+    public static void main(String args[]){
+        boolean takeUserInput = true;
+        if(takeUserInput) {
+            UserInput program = new UserInput();
+            program.startProgram();
+        }
+        else
+            manualEntry();
     }
 }

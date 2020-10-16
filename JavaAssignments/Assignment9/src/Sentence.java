@@ -1,7 +1,11 @@
 import java.util.regex.Pattern;
 
 public class Sentence {
-    public static boolean checkSentence(String input){
+    private String input;
+    Sentence(String input){
+        this.input = input;
+    }
+    public boolean checkSentence(){
         return Pattern.matches("^[A-Z].*[.]$",input);
     }
 }

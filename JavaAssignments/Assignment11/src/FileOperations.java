@@ -4,12 +4,16 @@ import java.io.IOException;
 import java.util.Map;
 
 public class FileOperations {
-    public static void writeDataToFile(String fileName, Object charFreq){
-        File file = new File(fileName);
+    File file;
+    FileOperations(String fileName){
+        file = new File(fileName);
+    }
+
+    public void writeDataToFile(Object charFreq){
         FileWriter writeFile;
         try {
             file.createNewFile();
-            writeFile = new FileWriter(fileName);
+            writeFile = new FileWriter(file);
             writeFile.write(charFreq.toString());
             writeFile.close();
         }

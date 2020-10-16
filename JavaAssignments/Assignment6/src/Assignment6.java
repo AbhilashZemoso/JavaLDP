@@ -3,27 +3,21 @@ import java.util.List;
 import java.util.Set;
 
 public class Assignment6 {
-    private static void displayList(List<Integer> listOfIntegers){
-        int count = 1;
-        for(int number:listOfIntegers) {
-            System.out.println(count + " : " + number);
-            count++;
-        }
-    }
 
     public static void main(String args[]){
         //Assignment part 1
-        List<Integer> vampireNumbers = VampireNumber.getFirstNVampireNumbers(100);
-        displayList(vampireNumbers);
+        VampireNumber vampireObject = new VampireNumber(100);
+        vampireObject.displayFirstNVampireNumbers();
 
         //Assignment part 2
         TwoOverloadedConstructors object = new TwoOverloadedConstructors(2,3);
 
         //Assignment part 3
-        ArrayOfObjects array[] = ArrayOfObjects.createArrayObjectReferences();
+        ArrayOfObjects array[] = new ArrayOfObjects[3];
 
         //Assignment part 4
-        ArrayOfObjects.createArrayObjects(array);
-
+        array[0] = new ArrayOfObjects("first Object");
+        array[1] = new ArrayOfObjects("second Object");
+        array[2]  = new ArrayOfObjects("third Object");
     }
 }

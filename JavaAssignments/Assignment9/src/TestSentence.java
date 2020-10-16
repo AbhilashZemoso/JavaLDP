@@ -2,7 +2,8 @@ import java.util.regex.Pattern;
 
 public class TestSentence {
     private static void test(String input, boolean expected, int testNumber) {
-        if (expected != Sentence.checkSentence(input)) {
+        Sentence sentenceObject = new Sentence(input);
+        if (expected != sentenceObject.checkSentence()) {
             System.out.println("test case " + testNumber + " failed");
         }
     }

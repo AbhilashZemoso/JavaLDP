@@ -2,7 +2,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class VampireNumber {
-    private static int getFirstNumber(String numberAsString){
+    private int numberOfVampireNumbers;
+    VampireNumber(int numberOfVampireNumbers){
+        this.numberOfVampireNumbers = numberOfVampireNumbers;
+    }
+    private int getFirstNumber(String numberAsString){
         int size = numberAsString.length();
         String firstHalf = numberAsString.substring(0,(int)size/2);
         if(firstHalf.charAt(0)=='0')
@@ -11,7 +15,7 @@ public class VampireNumber {
         return firstNumber;
     }
 
-    private static int getSecondNumber(String numberAsString){
+    private int getSecondNumber(String numberAsString){
         int size = numberAsString.length();
         String secondHalf = numberAsString.substring((int)size/2,size);
         if(secondHalf.charAt(0)=='0')
@@ -20,7 +24,7 @@ public class VampireNumber {
         return secondNumber;
     }
 
-    private static boolean isVampireNumber(int number){
+    private boolean isVampireNumber(int number){
         String numberAsString = String.valueOf(number);
         List<String> possiblePermutations = Permutaion.getPermutations(numberAsString);
         for(String eachNumberString:possiblePermutations){
@@ -33,16 +37,16 @@ public class VampireNumber {
         return false;
     }
 
-    public static List<Integer> getFirstNVampireNumbers(int count){
+    public void displayFirstNVampireNumbers(){
         int start = 1000,end =10000;
         List<Integer> vampireNumbers = new LinkedList<>();
         while (true){
             for(int number = start;number<end;number++){
-                if(count==0)
-                    return vampireNumbers;
+                if(numberOfVampireNumbers==0)
+                    return;
                 if(isVampireNumber(number)){
-                    vampireNumbers.add(number);
-                    count--;
+                    System.out.println(number);
+                    numberOfVampireNumbers--;
                 }
             }
             start*=100;

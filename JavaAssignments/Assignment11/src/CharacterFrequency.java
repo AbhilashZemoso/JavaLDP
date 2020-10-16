@@ -2,9 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CharacterFrequency {
-    private static Map<Character,Integer> getCharacterFrequency(String input){
+    private String fileName;
+
+    CharacterFrequency(String fileName){
+        this.fileName = fileName;
+    }
+
+    private Map<Character,Integer> getCharacterFrequency(){
         Map<Character,Integer> charFrequency = new HashMap<>();
-        for(char ch:input.toCharArray()){
+        for(char ch:fileName.toCharArray()){
             if(charFrequency.containsKey(ch)){
                 int count = charFrequency.get(ch);
                 charFrequency.put(ch,count+1);
@@ -16,8 +22,9 @@ public class CharacterFrequency {
         return charFrequency;
     }
 
-    public static void evaluateAndwriteToFile(String fileName){
-        Map<Character,Integer> charFreq = CharacterFrequency.getCharacterFrequency(fileName);
-        FileOperations.writeDataToFile(fileName,charFreq);
+    public void evaluateAndwriteToFile(){
+        Map<Character,Integer> charFreq = getCharacterFrequency();
+        FileOperations fileOperationsObject = new FileOperations(fileName);
+        fileOperationsObject.writeDataToFile(charFreq);
     }
 }

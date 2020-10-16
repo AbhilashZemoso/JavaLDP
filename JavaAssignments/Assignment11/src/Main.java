@@ -3,7 +3,8 @@ import java.util.Map;
 public class Main {
     private static void test(){
         String fileName = "Sample3.txt";
-        CharacterFrequency.evaluateAndwriteToFile(fileName);
+        CharacterFrequency characterFrequencyObject =  new CharacterFrequency(fileName);
+        characterFrequencyObject.evaluateAndwriteToFile();
     }
 
 
@@ -17,7 +18,8 @@ public class Main {
                 System.out.println("Enter file name as argument");
             }
             else {
-                CharacterFrequency.evaluateAndwriteToFile(args[0]);
+                CharacterFrequency characterFrequencyObject =  new CharacterFrequency(args[0]);
+                characterFrequencyObject.evaluateAndwriteToFile();
             }
         }
     }

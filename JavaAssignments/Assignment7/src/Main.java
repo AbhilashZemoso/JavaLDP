@@ -20,10 +20,12 @@ public class Main {
         cycleArray[1] = (Cycle) cycle2;
         cycleArray[2] = (Cycle) cycle3;
 
-        for (int i = 0; i < 3; i++) {
-            //displays error because class Cycle doesn't have balance function
-            //cycleArray[i].balance();
-        }
+        /*
+        displays error because class Cycle doesn't have balance function
+        cycleArray[0].balance();
+        cycleArray[1].balance();
+        cycleArray[2].balance();
+        */
 
         ((Unicycle) cycleArray[0]).balance();
         ((Bicycle) cycleArray[1]).balance();
@@ -47,11 +49,11 @@ public class Main {
 
     private static void invokePart4() {
         CycleFactory uniFactory = new UnicycleFactory();
-        Cycle unicycle = uniFactory.createCycle();
+        Cycle unicycleObject = uniFactory.createCycle();
         CycleFactory biFactory = new BicycleFactory();
-        Cycle bicycle = biFactory.createCycle();
+        Cycle bicycleObject = biFactory.createCycle();
         CycleFactory triFactory = new TricycleFactory();
-        Cycle tricycle = triFactory.createCycle();
+        Cycle tricycleObject = triFactory.createCycle();
     }
 
     private static void invokePart5() {
